@@ -5,7 +5,7 @@ module HeavyControl
       def apply
         load_consts # explicit loading for production
 
-        ActionDispatch::Reloader.to_prepare do # handle reloading in dev mode
+        ActiveSupport::Reloader.to_prepare do # handle reloading in dev mode
           HeavyControl::ExplicitLoader.load_consts
         end
       end
